@@ -14,15 +14,18 @@ function Home() {
     setLoading(false);
   };
   useEffect(() => getMovies(), []);
+  console.log(movies);
   return (
     <div>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
         <div>
+          <h1>TOP 20</h1>
           {movies.map((movie) => (
             <Movie
               key={movie.id}
+              id={movie.id}
               url={movie.url}
               coverimg={movie.medium_cover_image}
               title={movie.title}
